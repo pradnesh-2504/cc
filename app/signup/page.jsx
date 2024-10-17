@@ -15,11 +15,11 @@ export default function SignUp() {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
-  const handleChange = (e:unknown) => {
+  const handleChange = (e:any) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-
-  const handleSubmit = async (e:unknown) => {
+  
+  const handleSubmit = async (e:any) => {
     e.preventDefault();
     setLoading(true);
     setError('');

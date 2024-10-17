@@ -15,11 +15,11 @@ export default function SignUp() {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
-  const handleChange = (e:any) => {
+  const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
   
-  const handleSubmit = async (e:any) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setError('');
@@ -29,7 +29,7 @@ export default function SignUp() {
       await createUserWithEmailAndPassword(auth, formData.email, formData.password);
       console.log('User signed up:', formData);
       setFormData({ name: '', email: '', password: '' });
-    } catch (err:any) {
+    } catch (err) {
       setError(err.message);
       console.error('Error signing up:', err);
     } finally {

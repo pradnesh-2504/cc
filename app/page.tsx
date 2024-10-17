@@ -140,7 +140,7 @@ function TestimonialCard({ name, quote }: TestimonialCardProps) {
         <h3 className="text-lg">{name}</h3>
       </CardHeader>
       <CardContent>
-        <p className="italic text-gray-600">"{quote}"</p>
+        <p className="italic text-gray-600">{quote}</p>
       </CardContent>
     </Card>
   );

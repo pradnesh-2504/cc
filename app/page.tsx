@@ -84,18 +84,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <h2 className="mb-12 text-center text-3xl font-bold">What Our Patients Say</h2>
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            <TestimonialCard
-              name="Sarah Johnson"
-              quote="Dentelo transformed my smile and boosted my confidence. The team is professional and caring."
-            />
-            <TestimonialCard
-              name="Michael Chen"
-              quote="I have never felt more at ease at a dental office. The staff is friendly and the facilities are top-notch."
-            />
-            <TestimonialCard
-              name="Emily Rodriguez"
-              quote="From routine cleanings to complex procedures, Dentelo provides exceptional care every time."
-            />
+
           </div>
         </div>
       </section>

@@ -1,4 +1,4 @@
-import { ArrowRight, Calendar, Smile, Shield, Tooth } from "lucide-react";
+import { ArrowRight, Calendar, Smile, Shield } from "lucide-react";
 import Link from 'next/link';
 import Image from 'next/image';
 import Button from "@mui/material/Button";
@@ -42,7 +42,7 @@ export default function Home() {
         <h2 className="mb-12 text-center text-3xl font-bold">Our Services</h2>
         <div className="grid gap-8 md:grid-cols-3">
           <FeatureCard
-            icon={<Tooth className="h-10 w-10 text-purple-500" />}
+            icon={<Smile className="h-10 w-10 text-purple-500" />}
             title="Preventive Care"
             description="Regular check-ups and cleanings to maintain your oral health"
             image="/img1.png" // Add the image path here
@@ -101,7 +101,7 @@ export default function Home() {
   );
 }
 
-function FeatureCard({ icon, title, description, image }) {
+function FeatureCard({ icon, title, description, image }:{icon:any, title:any, description:any, image:any}) {
   return (
     <Card className="transition-all justify-center align-middle duration-300 hover:shadow-lg">
       <CardHeader>
@@ -127,7 +127,7 @@ function FeatureCard({ icon, title, description, image }) {
   );
 }
 
-function TestimonialCard({ name, quote }) {
+function TestimonialCard({ name, quote }:{name:any, quote:any}) {
   return (
     <Card className="transition-all duration-300 hover:shadow-lg">
       <CardHeader>

@@ -1,3 +1,4 @@
+// Imports
 import { ArrowRight, Calendar, Smile, Shield } from "lucide-react";
 import Link from 'next/link';
 import Image from 'next/image';
@@ -6,6 +7,20 @@ import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
 import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
+
+// FeatureCard Props Type Definition
+interface FeatureCardProps {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+  image: string;
+}
+
+// TestimonialCard Props Type Definition
+interface TestimonialCardProps {
+  name: string;
+  quote: string;
+}
 
 export default function Home() {
   return (
@@ -45,19 +60,19 @@ export default function Home() {
             icon={<Smile className="h-10 w-10 text-purple-500" />}
             title="Preventive Care"
             description="Regular check-ups and cleanings to maintain your oral health"
-            image="/img1.png" // Add the image path here
+            image="/img1.png"
           />
           <FeatureCard
             icon={<Smile className="h-10 w-10 text-blue-500" />}
             title="Cosmetic Dentistry"
             description="Enhance your smile with our advanced cosmetic treatments"
-            image="/img2.png" // Add the image path here
+            image="/img2.png"
           />
           <FeatureCard
             icon={<Shield className="h-10 w-10 text-green-500" />}
             title="Restorative Procedures"
             description="State-of-the-art restorative treatments for damaged teeth"
-            image="/img3.png" // Add the image path here
+            image="/img3.png"
           />
         </div>
       </section>
@@ -101,13 +116,12 @@ export default function Home() {
   );
 }
 
-function FeatureCard({ icon, title, description, image }:{icon:any, title:any, description:any, image:any}) {
+// FeatureCard Component with Props Validation
+function FeatureCard({ icon, title, description, image }: FeatureCardProps) {
   return (
     <Card className="transition-all justify-center align-middle duration-300 hover:shadow-lg">
       <CardHeader>
-        <div className="mb-4 flex justify-center">
-          {icon}
-        </div>
+        <div className="mb-4 flex justify-center">{icon}</div>
         <h3 className="text-xl text-center">{title}</h3>
       </CardHeader>
       <CardContent className="flex flex-col align-middle items-center justify-center">
@@ -127,7 +141,8 @@ function FeatureCard({ icon, title, description, image }:{icon:any, title:any, d
   );
 }
 
-function TestimonialCard({ name, quote }:{name:any, quote:any}) {
+// TestimonialCard Component with Props Validation
+function TestimonialCard({ name, quote }: TestimonialCardProps) {
   return (
     <Card className="transition-all duration-300 hover:shadow-lg">
       <CardHeader>

@@ -33,7 +33,7 @@ export default function Home() {
             Your Smile, Our Passion
           </h1>
           <p className="mb-8 text-xl text-gray-600 max-w-2xl">
-            Experience modern dental care with Dentelo&apos;s cutting-edge technology and expert team. Your smile deserves the best.
+            Experience modern dental care with Dentelo cutting-edge technology and expert team. Your smile deserves the best.
           </p>
 
 
@@ -90,7 +90,7 @@ export default function Home() {
             />
             <TestimonialCard
               name="Michael Chen"
-              quote="I&apos;ve never felt more at ease at a dental office. The staff is friendly and the facilities are top-notch."
+              quote="I have never felt more at ease at a dental office. The staff is friendly and the facilities are top-notch."
             />
             <TestimonialCard
               name="Emily Rodriguez"

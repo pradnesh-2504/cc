@@ -1,25 +1,31 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, ChangeEvent, FormEvent } from 'react';
 import { Card, CardContent, CardActions, Typography, TextField, Button } from '@mui/material';
 import { auth } from '../utils/firebase'; // Adjust the path as necessary
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 
+interface FormData {
+  name: string;
+  email: string;
+  password: string;
+}
+
 export default function SignUp() {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
     password: '',
   });
 
-  const [error, setError] = useState('');
-  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string>('');
+  const [loading, setLoading] = useState<boolean>(false);
 
-  const handleChange = (e) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-  
-  const handleSubmit = async (e) => {
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
     setError('');
@@ -30,7 +36,7 @@ export default function SignUp() {
       console.log('User signed up:', formData);
       setFormData({ name: '', email: '', password: '' });
     } catch (err) {
-      setError(err.message);
+      setError((err as Error).message);
       console.error('Error signing up:', err);
     } finally {
       setLoading(false);
